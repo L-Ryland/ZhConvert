@@ -3,11 +3,13 @@ package com.rylandliu.zhconvert;
 import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.ListPreference;
@@ -16,11 +18,10 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
 
+import com.rylandliu.zhconvert.utils.ConfigUtils;
 import com.zqc.opencc.android.lib.ConversionType;
 
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Locale;
 
 /**
  * Settings Activity
@@ -53,28 +54,29 @@ public class SettingsActivity extends AppCompatActivity {
         getApplication().createConfigurationContext(newConfig);
     }
 
+    /**
+     * settings Fragment
+     */
     public static class SettingsFragment extends PreferenceFragmentCompat {
 
         private final Preference.OnPreferenceChangeListener switchLangListener = (preference, newValue) -> {
             if (preference.getKey().equals("lang")) {
                 Context context = getContext();
-                Configuration configuration = getContext().getResources().getConfiguration();
-                String lang = newValue.toString();
-                switch (lang) {
-                    case "en":
-                        configuration.setLocale(Locale.ENGLISH);
-                        break;
-                    case "zh-cn":
-                        configuration.setLocale(Locale.CHINA);
-                        break;
-                    case "zh-tw":
-                        configuration.setLocale(Locale.TAIWAN);
-                        break;
-                    default:
-                        break;
+                if (context != null) {
+                    String lang = newValue.toString();
+                    if (this.getActivity() == null){
+                        Log.w(TAG, "switchLangListener: activity is null");
+                        return false;
+                    }
+                    boolean flag = ConfigUtils.setLocale(getResources() ,lang );
+                    if (flag){
+                        //restart app
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        getActivity().startActivity(intent);
+                    }
+                    return true;
                 }
-                context.createConfigurationContext(configuration);
-                return true;
             }
             return false;
         };
@@ -142,5 +144,9 @@ public class SettingsActivity extends AppCompatActivity {
 
         }
 
+        @Override
+        public void onConfigurationChanged(@NonNull Configuration newConfig) {
+            super.onConfigurationChanged(newConfig);
+        }
     }
 }

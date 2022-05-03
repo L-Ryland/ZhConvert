@@ -13,6 +13,7 @@ android {
         versionCode 29
         versionName "1.0"
 
+        resConfigs "en", "zh-rCN", "zh-rTW"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

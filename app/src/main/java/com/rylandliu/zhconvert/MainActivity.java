@@ -1,13 +1,23 @@
 package com.rylandliu.zhconvert;
 
+import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.LocaleList;
 import android.view.*;
 import android.widget.*;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.rylandliu.zhconvert.utils.ConfigUtils;
 import com.zqc.opencc.android.lib.ChineseConverter;
 import com.zqc.opencc.android.lib.ConversionType;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -19,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
   //menu view
   @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
+  public boolean onCreateOptionsMenu(@NonNull Menu menu) {
     getMenuInflater().inflate(R.menu.context_menu, menu);
 
     return true;
@@ -39,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    // register service
-//    intent.setAction(".InsertIntentService");
-//    startService(intent);
+    SharedPreferences sharedPreferences = getDefaultSharedPreferences(getApplicationContext());
+    String lang = sharedPreferences.getString("lang", "auto");
+    // set lang
+    ConfigUtils.setLocale(getResources(),lang);
     setContentView(R.layout.activity_main);
 
     Spinner spinner = findViewById(R.id.spinner);
