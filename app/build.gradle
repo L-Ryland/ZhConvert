@@ -21,8 +21,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
-            applicationIdSuffix kotlin_version
-            versionNameSuffix kotlin_version
         }
     }
     compileOptions {
@@ -41,9 +39,6 @@ dependencies {
     implementation 'androidx.fragment:fragment:1.4.1'
     // opencc implementation
     implementation 'com.github.qichuan:android-opencc:1.2.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
 repositories {
     mavenCentral()
