@@ -1,7 +1,5 @@
 package com.rylandliu.zhconvert.utils;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.LocaleList;

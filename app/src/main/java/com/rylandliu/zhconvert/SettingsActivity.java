@@ -27,8 +27,6 @@ import org.jetbrains.annotations.NotNull;
  * Settings Activity
  */
 public class SettingsActivity extends AppCompatActivity {
-
-
     private static final String TAG = "SettingsActivity";
 
     @Override
@@ -49,8 +47,7 @@ public class SettingsActivity extends AppCompatActivity {
     public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         SharedPreferences sharedPreferences = getDefaultSharedPreferences(getApplicationContext());
-        String lang = sharedPreferences.getString("lang", "auto");
-        Log.d(TAG, "onConfigurationChanged: " + lang);
+        Log.d(TAG, "onConfigurationChanged: SettingsActive is true");
         getApplication().createConfigurationContext(newConfig);
     }
 
@@ -64,12 +61,12 @@ public class SettingsActivity extends AppCompatActivity {
                 Context context = getContext();
                 if (context != null) {
                     String lang = newValue.toString();
-                    if (this.getActivity() == null){
+                    if (this.getActivity() == null) {
                         Log.w(TAG, "switchLangListener: activity is null");
                         return false;
                     }
-                    boolean flag = ConfigUtils.setLocale(getResources() ,lang );
-                    if (flag){
+                    boolean flag = ConfigUtils.setLocale(getResources(), lang);
+                    if (flag) {
                         //restart app
                         Intent intent = new Intent(getActivity(), MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -147,6 +144,7 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onConfigurationChanged(@NonNull Configuration newConfig) {
             super.onConfigurationChanged(newConfig);
+            Log.d(TAG, "onConfigurationChanged: SettingsFragment is true");
         }
     }
 }

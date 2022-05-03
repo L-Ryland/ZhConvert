@@ -25,7 +25,7 @@
         <activity
                 android:name=".SettingsActivity"
                 android:label="Settings"
-                android:configChanges="locale"
+                android:configChanges="orientation|locale"
                 android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
