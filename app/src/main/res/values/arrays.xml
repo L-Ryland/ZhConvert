@@ -1,0 +1,30 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="t2s_options">
+        <item>@string/tw2s</item>
+        <item>@string/hk2s</item>
+        <item>@string/tw2sp</item>
+        <item>@string/t2s</item>
+    </string-array>
+    <string-array name="s2t_options">
+        <item>@string/tw2t</item>
+        <item>@string/s2twp</item>
+        <item>@string/hk2t</item>
+        <item>@string/s2tw</item>
+        <item>@string/s2t</item>
+        <item>@string/t2tw</item>
+        <item>@string/s2hk</item>
+    </string-array>
+    <string-array name="conversion_type_array">
+        <item>臺灣正體到簡體,並轉爲大陸常用詞彙</item>
+        <item>簡體到香港繁體</item>
+        <item>簡體到繁體</item>
+        <item>簡體到臺灣正體</item>
+        <item>簡體到繁體,並轉換爲臺灣常用詞彙</item>
+        <item>繁體到香港繁體</item>
+        <item>繁體到簡體</item>
+        <item>繁體臺灣正體</item>
+        <item>臺灣正體到簡體</item>
+        <item>香港繁體到簡體</item>
+    </string-array>
+</resources>

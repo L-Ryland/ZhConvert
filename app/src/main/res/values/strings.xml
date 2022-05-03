@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">ZhConvert</string>
+    <!-- Settings Activity Title -->
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="test_text" translatable="false">滑鼠裡面的矽二極體壞了，導致游標解析度降低\n我們在寮國的伺服器的硬碟需要使用網際網路演算法軟體解決非同步的問題。</string>
+
+    <!-- Messages Preferences -->
+    <string name="tr_to_sp">Traditional to Simplified</string>
+    <string name="sp_to_tr">Simplified to Traditional</string>
+
+    <!-- Sync Preferences -->
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="hk2s">Traditional Chinese (Hong Kong Standard) to Simplified Chinese</string>
+    <string name="hk2t">Traditional Chinese (Hong Kong variant) to Traditional Chinese</string>
+    <string name="jp2t">New Japanese Kanji (Shinjitai) to Traditional Chinese Characters (Kyūjitai)</string>
+    <string name="s2hk">Simplified Chinese to Traditional Chinese (Hong Kong Standard)</string>
+    <string name="s2t">Simplified Chinese to Traditional Chinese</string>
+    <string name="s2tw">Simplified Chinese to Traditional Chinese (Taiwan Standard)</string>
+    <string name="s2twp">Simplified Chinese to Traditional Chinese (Taiwan Standard) with Taiwanese idiom</string>
+    <string name="t2s">Traditional Chinese to Simplified Chinese</string>
+    <string name="t2tw">Traditional Chinese to Traditional Chinese (Taiwan Standard)</string>
+    <string name="t2jp">Traditional Chinese Characters (Kyūjitai) to New Japanese Kanji (Shinjitai)</string>
+    <string name="tw2s">Traditional Chinese (Taiwan Standard) to Simplified Chinese</string>
+    <string name="tw2t">Traditional Chinese (Taiwan standard) to Traditional Chinese</string>
+    <string name="tw2sp">Traditional Chinese (Taiwan Standard) to Simplified Chinese with Mainland Chinese idiom
+    </string>
+    <string name="convert" translatable="false">简⇄繁</string>
+    <string name="s2tConvert">S2T</string>
+    <string name="t2SConvert">T2S</string>
+    <string name="locale">Language</string>
+    <string name="convert_header">Convert Settings</string>
+    <string name="universal_key">Universal</string>
+    <string name="auto">Auto</string>
+</resources>

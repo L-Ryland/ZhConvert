@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="attachment_summary_off">ZhConvert</string>
+    <string name="tw2t">台湾正体到繁体</string>
+    <string name="tw2s">"台湾正体到简体 "</string>
+    <string name="t2jp">"繁体到日本汉字 "</string>
+    <string name="t2tw">"繁体台湾正体 "</string>
+    <string name="t2s">繁体到简体</string>
+    <string name="s2tw">简体到台湾正体</string>
+    <string name="s2twp">"简体到繁体（台湾正体标准）并转换为台湾常用词汇 "</string>
+    <string name="s2hk">简体到香港繁体（香港小学学习字词表标准）</string>
+    <string name="s2t">"简体到繁体 "</string>
+    <string name="jp2t">"日本汉字到繁体 "</string>
+    <string name="hk2t">"香港繁体（香港小学学习字词表标准）到繁体 "</string>
+    <string name="hk2s">"香港繁体（香港小学学习字词表标准）到简体 "</string>
+    <string name="tw2sp">"繁体（台湾正体标准）到简体并转换为中国大陆常用词汇 "</string>
+    <string name="app_name">简繁转换</string>
+    <string name="title_activity_settings">设置</string>
+    <string name="convert_header">转换模式</string>
+    <string name="tr_to_sp">繁体到简体</string>
+    <string name="sp_to_tr">简体到繁体</string>
+    <string name="t2SConvert">繁体到简体</string>
+    <string name="s2tConvert">简体到繁体</string>
+    <string name="locale">语言</string>
+    <string name="universal_key">通用</string>
+    <string name="auto">自动</string>
+</resources>
