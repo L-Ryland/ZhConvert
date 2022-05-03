@@ -23,4 +23,5 @@
     <string name="locale">語言</string>
     <string name="universal_key">通用</string>
     <string name="auto">自動</string>
+    <string name="t2hk">繁體到香港繁體（香港小學學習字詞表標準）</string>
 </resources>

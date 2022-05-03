@@ -15,6 +15,19 @@
         <item>@string/t2tw</item>
         <item>@string/s2hk</item>
     </string-array>
+    <string-array name="conver_options">
+        <item>@string/tw2sp</item>
+        <item>@string/s2hk</item>
+        <item>@string/s2t</item>
+        <item>@string/s2tw</item>
+        <item>@string/t2hk</item>
+        <item>@string/t2s</item>
+        <item>@string/t2tw</item>
+        <item>@string/t2jp</item>
+        <item>@string/tw2s</item>
+        <item>@string/tw2t</item>
+        <item>@string/tw2sp</item>
+    </string-array>
     <string-array name="conversion_type_array">
         <item>臺灣正體到簡體,並轉爲大陸常用詞彙</item>
         <item>簡體到香港繁體</item>

@@ -19,6 +19,7 @@
     <string name="s2t">Simplified Chinese to Traditional Chinese</string>
     <string name="s2tw">Simplified Chinese to Traditional Chinese (Taiwan Standard)</string>
     <string name="s2twp">Simplified Chinese to Traditional Chinese (Taiwan Standard) with Taiwanese idiom</string>
+    <string name="t2hk">Traditional Chinese to Traditional Chinese (Hong Kong Standard)</string>
     <string name="t2s">Traditional Chinese to Simplified Chinese</string>
     <string name="t2tw">Traditional Chinese to Traditional Chinese (Taiwan Standard)</string>
     <string name="t2jp">Traditional Chinese Characters (Kyūjitai) to New Japanese Kanji (Shinjitai)</string>
