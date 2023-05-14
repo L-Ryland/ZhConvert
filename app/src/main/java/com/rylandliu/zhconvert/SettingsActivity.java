@@ -108,14 +108,14 @@ public class SettingsActivity extends AppCompatActivity {
             };
 
             // add preference list
-            t2sPreference.setKey("T2S");
-            t2sPreference.setTitle(R.string.tr_to_sp);
+            t2sPreference.setKey("convert_option");
+            t2sPreference.setTitle(R.string.covert_option);
             t2sPreference.setEntryValues(ConversionList);
             t2sPreference.setEntries(R.array.conver_options);
             t2sPreference.setSummaryProvider(ListPreference.SimpleSummaryProvider.getInstance());
             t2sPreference.setDefaultValue("t2s.json");
-            s2tPreference.setKey("S2T");
-            s2tPreference.setTitle(R.string.sp_to_tr);
+            s2tPreference.setKey("reverse_option");
+            s2tPreference.setTitle(R.string.reverse_option);
             s2tPreference.setEntryValues(ConversionList);
             s2tPreference.setEntries(R.array.conver_options);
             s2tPreference.setSummaryProvider(ListPreference.SimpleSummaryProvider.getInstance());

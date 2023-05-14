@@ -28,8 +28,8 @@
     <string name="tw2sp">Traditional Chinese (Taiwan Standard) to Simplified Chinese with Mainland Chinese idiom
     </string>
     <string name="convert" translatable="false">简⇄繁</string>
-    <string name="s2tConvert">S2T</string>
-    <string name="t2SConvert">T2S</string>
+    <string name="covert_option">Convert Option</string>
+    <string name="reverse_option">Revert Conversion</string>
     <string name="locale">Language</string>
     <string name="convert_header">Convert Settings</string>
     <string name="universal_key">Universal</string>

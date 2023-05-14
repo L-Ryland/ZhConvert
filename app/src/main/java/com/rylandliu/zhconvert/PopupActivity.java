@@ -16,8 +16,8 @@ import java.util.stream.Stream;
 public class PopupActivity extends Activity {
 
     private static final String TAG = "PopupActivity";
-    private ConversionType s2tConfig;
-    private ConversionType t2sConfig;
+    private ConversionType conversionConfig;
+    private ConversionType reversionConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +28,13 @@ public class PopupActivity extends Activity {
             // get system Text
             selectText = intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT);
             SharedPreferences sharedPreferences = getDefaultSharedPreferences(getApplicationContext());
-            s2tConfig = convertToConvertType(sharedPreferences.getString("S2T", "s2t.json"));
-            t2sConfig = convertToConvertType(sharedPreferences.getString("T2S", "t2s.json"));
-            if (selectText != null && s2tConfig != null && t2sConfig != null) {
+            conversionConfig = convertToConvertType(sharedPreferences.getString("convert_option", "s2t.json"));
+            reversionConfig = convertToConvertType(sharedPreferences.getString("reverse_option", "t2s.json"));
+            Log.d(TAG, "onCreate: conversionConfig" + conversionConfig);
+            if (selectText != null && conversionConfig != null && reversionConfig != null) {
                 boolean isTextAbleToConvert = compareInDepth(selectText);
-                String converted = isTextAbleToConvert ? ChineseConverter.convert(selectText.toString(),
-                        t2sConfig, getApplicationContext()) : ChineseConverter.convert(selectText.toString(), s2tConfig, getApplicationContext());
-                Log.d(TAG, "onCreate: " + "converted= " + converted + "s2tConfig= " + s2tConfig.getValue() + " t2sConfig= " + t2sConfig.getValue());
+                String converted = convertText(selectText);
+                Log.d(TAG, "onCreate: " + "converted= " + converted + "s2tConfig= " + conversionConfig.getValue() + " t2sConfig= " + reversionConfig.getValue());
                 intent.putExtra(Intent.EXTRA_PROCESS_TEXT, converted);
                 setResult(RESULT_OK, intent);
             } else {
@@ -80,6 +80,20 @@ public class PopupActivity extends Activity {
     }
 
     /**
+     * real convert implementation
+     * @param original
+     * @return converted string
+     */
+    private String convertText(CharSequence original) {
+        String toChars = original.toString();
+        String converted = ChineseConverter.convert(toChars, conversionConfig, getApplicationContext());
+        if (converted.equals(toChars)) {
+            converted = ChineseConverter.convert(toChars, reversionConfig, getApplicationContext());
+        }
+        return converted;
+    }
+
+    /**
      * Test if the given CharSequence tested string is able to convert into another one
      *
      * @param original CharSequence tested string
@@ -89,7 +103,7 @@ public class PopupActivity extends Activity {
         Stream<String> toChars = original.chars().mapToObj(c -> String.valueOf((char) c));
         try {
             toChars.forEach(c -> {
-                String converted = ChineseConverter.convert(c, t2sConfig, getApplicationContext());
+                String converted = ChineseConverter.convert(c, reversionConfig, getApplicationContext());
                 if (!converted.equals(c)) throw new RuntimeException();
             });
         } catch (RuntimeException e) {

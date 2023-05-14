@@ -19,10 +19,10 @@
     <string name="convert_header">转换模式</string>
     <string name="tr_to_sp">繁体到简体</string>
     <string name="sp_to_tr">简体到繁体</string>
-    <string name="t2SConvert">繁体到简体</string>
-    <string name="s2tConvert">简体到繁体</string>
+    <string name="reverse_option">反转选项</string>
     <string name="locale">语言</string>
     <string name="universal_key">通用</string>
     <string name="auto">自动</string>
     <string name="t2hk">繁体到香港繁体（香港小学学习字词表标准）</string>
+    <string name="covert_option">转换选项</string>
 </resources>
